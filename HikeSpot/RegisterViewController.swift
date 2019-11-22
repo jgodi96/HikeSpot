@@ -80,7 +80,7 @@ class RegisterViewController: UIViewController {
                 else{
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid]){ (error) in
+                    db.collection("users").addDocument(data: ["email":email,"password":password,"firstName":firstName,"lastName":lastName, "uid": result!.user.uid]){ (error) in
                        
                         if error != nil {
                             self.showError("There was an error when trying to create user data")
@@ -103,7 +103,7 @@ class RegisterViewController: UIViewController {
              if(segue.identifier == "toDetail"){
                  if let viewController: HomeViewController = segue.destination as? HomeViewController {
                 
-       
+                    viewController.homeEmail = txtEmail.text
                    
                  }
              }

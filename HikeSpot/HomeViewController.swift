@@ -19,13 +19,13 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let db = Firestore.firestore()
-        db.collection("users").whereField("firstname", isEqualTo: "Analyne").getDocuments { (snapshot,error) in
+        db.collection("users").whereField("email", isEqualTo: homeEmail).getDocuments { (snapshot,error) in
                           if error != nil{
                               print(error)
                           } else{
                               for document in (snapshot?.documents)! {
                                   
-                                if var name = document.data()["firstname"] as! String?{
+                                if var name = document.data()["firstName"] as! String?{
                                     //print(name)
                                     self.welcome.text = name
                                 }

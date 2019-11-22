@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
             
            
     }
-       // fireBaseRead()
+    
     
 }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
             
               if let viewController: HomeViewController = segue.destination as? HomeViewController {
                 
-                viewController.homeFirstName = self.firstName
+                viewController.homeEmail = self.txtFirstName.text
                 
     
                 
