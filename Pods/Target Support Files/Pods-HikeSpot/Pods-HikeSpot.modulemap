@@ -1,0 +1,6 @@
+framework module Pods_HikeSpot {
+  umbrella header "Pods-HikeSpot-umbrella.h"
+
+  export *
+  module * { export * }
+}
