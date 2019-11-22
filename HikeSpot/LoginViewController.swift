@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
           
           if(segue.identifier == "lToHome"){
               if let viewController: HomeViewController = segue.destination as? HomeViewController {
-                viewController.txtWelcome.text = firstName!
+                viewController.homeFirstName = firstName!
                 
     
                 
