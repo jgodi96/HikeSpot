@@ -165,7 +165,7 @@
         <!--Home View Controller-->
         <scene sceneID="tNb-rL-gYi">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="MWK-to-ALo" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="MWK-to-ALo" customClass="HomeViewController" customModule="HikeSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="djl-wj-KZw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,6 +182,9 @@
                         <viewLayoutGuide key="safeArea" id="Zjk-E8-NWa"/>
                     </view>
                     <navigationItem key="navigationItem" id="bB7-2w-PYb"/>
+                    <connections>
+                        <outlet property="welcome" destination="EGS-bB-FJ5" id="mWM-0A-KJq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7rv-mg-7l7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,6 +257,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p7C-RF-WvH"/>
+        <segue reference="ZQq-xa-E0i"/>
     </inferredMetricsTieBreakers>
 </document>
