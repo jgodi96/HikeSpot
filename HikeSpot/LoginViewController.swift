@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
     
 }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let db = Firestore.firestore()
+    /*    let db = Firestore.firestore()
         db.collection("users").whereField("firstname", isEqualTo: "Analyne").getDocuments { (snapshot,error) in
             if error != nil{
                 print(error)
@@ -63,11 +63,12 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-          
+     */
           
           if(segue.identifier == "lToHome"){
+            
               if let viewController: HomeViewController = segue.destination as? HomeViewController {
-                viewController.homeFirstName = firstName!
+                // viewController.homeFirstName = firstName!
                 
     
                 

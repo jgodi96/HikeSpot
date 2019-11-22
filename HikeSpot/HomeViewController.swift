@@ -10,13 +10,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var homeFirstName:String?
-    @IBOutlet weak var txtWelcome: UILabel!
+    //var homeFirstName:String?
+    //@IBOutlet weak var txtWelcome: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        txtWelcome.text = homeFirstName!
+       // txtWelcome.text = homeFirstName!
     }
     
 
