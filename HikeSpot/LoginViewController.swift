@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 class LoginViewController: UIViewController {
 
-    var firstName:String?
+    var firstName = "Joshua"
     @IBOutlet weak var txtFirstName: UITextField!
     @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var buttonLogin: UIButton!
@@ -33,13 +33,13 @@ class LoginViewController: UIViewController {
         Utilities.styleFilledButton(buttonLogin)
         
     }
-    func fireBaseRead(){
+    /*  func fireBaseRead(){
         let db = Firestore.firestore()
-        db.collection("users").whereField("firstname", isEqualTo: "Joshua").getDocuments { (snapshot,error) in
+        db.collection("users").whereField("firstname", isEqualTo: "Analyne").getDocuments { (snapshot,error) in
                           if error != nil{
                               print(error)
                           } else{
-                              for document in snapshot!.documents {
+                              for document in (snapshot?.documents)! {
                                   
                                 if var name = document.data()["firstname"] as! String?{
                                     print(name)
@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
                               }
                           }
                       }
-    }
+    }*/
     @IBAction func loginTapped(_ sender: Any) {
         //empty text field check
         let email = txtFirstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
             
            
     }
-        fireBaseRead()
+       // fireBaseRead()
     
 }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
             
               if let viewController: HomeViewController = segue.destination as? HomeViewController {
                 
-                viewController.homeFirstName = self.firstName!
+                viewController.homeFirstName = self.firstName
                 
     
                 

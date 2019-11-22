@@ -7,16 +7,36 @@
 //
 
 import UIKit
-
+import FirebaseAuth
+import FirebaseFirestore
 class HomeViewController: UIViewController {
 
-    var homeFirstName:String?
+    var homeEmail:String?
+    var firstName:String?
     @IBOutlet weak var welcome: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-       welcome.text = homeFirstName!
+        let db = Firestore.firestore()
+        db.collection("users").whereField("firstname", isEqualTo: "Analyne").getDocuments { (snapshot,error) in
+                          if error != nil{
+                              print(error)
+                          } else{
+                              for document in (snapshot?.documents)! {
+                                  
+                                if var name = document.data()["firstname"] as! String?{
+                                    //print(name)
+                                    self.welcome.text = name
+                                }
+                                
+                                  
+                                  
+                              }
+                          }
+                      }
+   
+        
     }
     
 
