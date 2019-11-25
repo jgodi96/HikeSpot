@@ -7,22 +7,19 @@
 //
 
 import Foundation
-import UIKit
 
 class cities
 {
     var cities:[city] = []
- 
-    let citySectionTitles = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    
     init()
     {
-        let c1 = city(cn: "Los Angeles", cd: "Center of the nation’s film industry", cin: #imageLiteral(resourceName: "losangeles.png"))
-        let c2 = city(cn: "New York", cd: "Statue of liberty is located here", cin:#imageLiteral(resourceName: "newyork.png") )
-        let c3 = city(cn: "Chicago", cd: "Is among the largest cities in the U.S", cin:#imageLiteral(resourceName: "chicago.png") )
-        let c4 = city(cn: "Pheonix", cd: "Capital of the state of Arizona", cin: #imageLiteral(resourceName: "pheonix.png"))
-        let c5 = city(cn: "San Diego", cd: "On the Pacific coast of California.", cin:#imageLiteral(resourceName: "sandiego.png") )
+        let c1 = city(name: "Los Angeles", description: "Center of the nation’s film industry", image: "losangeles.png")
+        let c2 = city(name: "New York", description: "Statue of liberty is located here", image: "newyork.png")
+        let c3 = city(name: "Chicago", description: "Is among the largest cities in the U.S", image: "chicago.png")
+        let c4 = city(name: "Pheonix", description: "Capital of the state of Arizona", image: "pheonix.png")
+        let c5 = city(name: "San Diego", description: "On the Pacific coast of California.", image: "sandiego.png")
         
-
         cities.append(c1)
         cities.append(c2)
         cities.append(c3)
@@ -39,12 +36,11 @@ class cities
     func removeCity(item:Int){
         cities.remove(at: item)
     }
-    func addCity(cname:String, des: String, image:String) -> city{
-        let c = city(cn: cname, cd: des, cin:#imageLiteral(resourceName: "tempe.png") )
+    func addCity(cname:String, des:String, image:String) -> city{
+        let c = city(name: cname, description:"ASU is located in tempe", image:"tempe.png" )
         cities.append(c)
         return c
     }
-  
     
     
     
@@ -52,12 +48,12 @@ class cities
 class city{
     var cityName:String?
     var cityDescription:String?
-    var cityImageName:UIImage?
+    var cityImageName:String?
     
-    init(cn:String,cd:String,cin:UIImage)
+    init(name:String,description:String,image:String)
     {
-        cityName = cn
-        cityDescription = cd
-        cityImageName = cin
+        cityName = name
+        cityDescription = description
+        cityImageName = image
     }
 }

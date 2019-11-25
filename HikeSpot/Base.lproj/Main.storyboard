@@ -207,7 +207,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Hikes" id="zvw-T4-4DN">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Fzu-1y-CUH"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Fzu-1y-CUH">
+                                            <connections>
+                                                <action selector="refreash:" destination="MWK-to-ALo" id="Cwf-4P-E0n"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -221,15 +225,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellHike" id="Chc-Kh-59N">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityCell" id="Chc-Kh-59N" customClass="CityTableViewCell" customModule="HikeSpot" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Chc-Kh-59N" id="add-bE-fsW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8T-ok-fap">
+                                                    <rect key="frame" x="20" y="-3" width="300" height="47"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="SZS-ka-86M" kind="presentation" identifier="detailView" id="kI8-BI-IPk"/>
+                                            <outlet property="cityTitle" destination="J8T-ok-fap" id="5p7-I9-Ngf"/>
+                                            <segue destination="SZS-ka-86M" kind="presentation" identifier="toDetail" id="kI8-BI-IPk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -254,6 +268,7 @@
                     <navigationItem key="navigationItem" id="bB7-2w-PYb"/>
                     <connections>
                         <outlet property="btnChangeProfilePic" destination="5eF-3v-mhK" id="mU4-Ig-Y6a"/>
+                        <outlet property="cityTable" destination="LE0-w9-tVa" id="tQv-0E-MVF"/>
                         <outlet property="profilePic" destination="Li8-6K-EZT" id="27A-qT-2Zb"/>
                         <outlet property="searchHike" destination="N3g-at-exs" id="OXZ-zz-7e4"/>
                         <outlet property="welcome" destination="EGS-bB-FJ5" id="mWM-0A-KJq"/>
@@ -285,9 +300,34 @@
                     <view key="view" contentMode="scaleToFill" id="ze2-D6-Ler">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7s-lF-3WR">
+                                <rect key="frame" x="20" y="20" width="374" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHO-bJ-sii">
+                                <rect key="frame" x="76" y="155" width="240" height="202"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qX-OU-yy7">
+                                <rect key="frame" x="54" y="421" width="307" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="VDt-Ir-dDn"/>
                     </view>
+                    <connections>
+                        <outlet property="detailDescription" destination="2qX-OU-yy7" id="lm2-HF-8nt"/>
+                        <outlet property="detailImage" destination="rHO-bJ-sii" id="nia-ns-9Vj"/>
+                        <outlet property="detailName" destination="J7s-lF-3WR" id="zza-IF-tYH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVZ-mc-lgt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

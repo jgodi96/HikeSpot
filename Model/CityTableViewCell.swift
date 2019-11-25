@@ -10,12 +10,12 @@ import UIKit
 
 class CityTableViewCell: UITableViewCell {
     @IBOutlet weak var cityTitle: UILabel!
-    @IBOutlet weak var cityImage: UIImageView!{
+   /* @IBOutlet weak var cityImage: UIImageView!{
         didSet{
             cityImage.layer.cornerRadius = cityImage.bounds.width / 2
             cityImage.clipsToBounds = true
         }
-    }
+    }*/
     
     override func awakeFromNib() {
         super.awakeFromNib()
