@@ -9,19 +9,31 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
-class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource{
+import CoreLocation
+class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource, CLLocationManagerDelegate{
+    //table view vars---------------------------------
     let picker = UIImagePickerController()
     @IBOutlet weak var btnChangeProfilePic: UIButton!
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var searchHike: UIButton!
-//tableView--------------------------------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------------------------------------
+    
+   //gui vars---------------------------------------
     var homeEmail:String?
     var firstName:String?
+    //location vars---------------------------------
+    var manager:CLLocationManager!
+     var city:String?
+    
     @IBOutlet weak var welcome: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        manager = CLLocationManager()
+               manager.delegate = self
+               manager.desiredAccuracy = kCLLocationAccuracyBest
+               manager.requestWhenInUseAuthorization()
+               manager.startUpdatingLocation()
+        
         picker.delegate = self
 
         // Firebase user recognition
@@ -48,6 +60,74 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
    
         
     }
+    //location ------------------------------------------------------------------------------------------------------------
+    class func isLocationServiceEnabled() -> Bool {
+           if CLLocationManager.locationServicesEnabled() {
+               switch(CLLocationManager.authorizationStatus()) {
+               case .notDetermined, .restricted, .denied:
+                   return false
+               case .authorizedAlways, .authorizedWhenInUse:
+                   return true
+               default:
+                   print("Something wrong with Location services")
+                   return false
+               }
+           } else {
+               print("Location services are not enabled")
+               return false
+           }
+       }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+           
+           print(locations)
+           
+           //userLocation - there is no need for casting, because we are now using CLLocation object
+
+           let userLocation:CLLocation = locations[0]
+           print(userLocation.coordinate.latitude)
+            let lat = userLocation.coordinate.latitude
+           
+           let lon = userLocation.coordinate.longitude
+        
+        Reverse(lati: lat, longi: lon)
+          
+           
+           
+           
+       }
+    func Reverse(lati:Double,longi:Double){
+        let location = CLLocation(latitude: lati, longitude: longi)
+               
+               // Geocode Location
+               CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+                   // Process Response
+                   self.processResponse(withPlacemarks: placemarks, error: error)
+               }
+        
+    }
+       
+       func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+           print(error)
+       }
+    
+          private func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
+                // Update View
+                
+                if let error = error {
+                    print("Unable to Reverse Geocode Location (\(error))")
+                    //locationLabel.text = "Unable to Find Address for Location"
+                    
+                } else {
+                    
+                    if (placemarks?.count)! > 0
+                    {
+                        print(placemarks?[0].location)
+                     self.city = placemarks?[0].locality
+                       
+                       // print(placemarks?[0].areasOfInterest)
+                    }
+                }
+            }
 //tableView--------------------------------------------------------------------------------------------------
 
     
@@ -122,17 +202,25 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
              
          }
       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let selectedIndex: IndexPath = self.cityTable.indexPath(for: sender as! UITableViewCell)!
             
-            let city = cityList.getCity(item: selectedIndex.row)
-            
-            
+        print(self.city)
             
             if(segue.identifier == "toDetail"){
+                let selectedIndex: IndexPath = self.cityTable.indexPath(for: sender as! UITableViewCell)!
+                           
+                           let city = cityList.getCity(item: selectedIndex.row)
                 if let viewController: DetailViewController = segue.destination as? DetailViewController {
                   viewController.selectedCity = city.cityName
                   viewController.detailDescriptionvar=city.cityDescription
                   viewController.detailimagevar = city.cityImageName
+                  
+                }
+            }
+        if(segue.identifier == "toSearch"){
+               
+                if let viewController: SearchViewController = segue.destination as? SearchViewController {
+                    viewController.city = self.city
+                    
                   
                 }
             }
@@ -188,7 +276,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
         }
-//----------------------------------------------------------------------------------------------------
 
     }
 
@@ -202,6 +289,9 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
         return input.rawValue
     }
+
+
+
 
     
 

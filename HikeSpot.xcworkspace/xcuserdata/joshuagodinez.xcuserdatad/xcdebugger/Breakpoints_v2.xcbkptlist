@@ -36,5 +36,177 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1CA9B83-C1B7-4ECF-A339-7304B32BA410"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HikeSpot/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD562553-AB53-4B1E-BE9A-748DAAC27CD6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HikeSpot/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "SearchViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BD562553-AB53-4B1E-BE9A-748DAAC27CD6 - c4ce154db6ec3ebe"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HikeSpot.SearchViewController.globalLat.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "HikeSpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshuagodinez/Desktop/HikeSpot/HikeSpot/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "BD562553-AB53-4B1E-BE9A-748DAAC27CD6 - 41d4b911b3636e8a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HikeSpot.SearchViewController.globalLat.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "HikeSpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshuagodinez/Desktop/HikeSpot/HikeSpot/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "153">
+               </Location>
+               <Location
+                  uuid = "BD562553-AB53-4B1E-BE9A-748DAAC27CD6 - cd446ceadc4442bd"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HikeSpot.SearchViewController.globalLat.modify : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "HikeSpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshuagodinez/Desktop/HikeSpot/HikeSpot/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "BD562553-AB53-4B1E-BE9A-748DAAC27CD6 - af5a116d303e8542"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HikeSpot.SearchViewController.globalLat.modify : Swift.Optional&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "HikeSpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshuagodinez/Desktop/HikeSpot/HikeSpot/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "BD562553-AB53-4B1E-BE9A-748DAAC27CD6 - a4e34788ea51ea1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HikeSpot.SearchViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HikeSpot.SearchViewController"
+                  moduleName = "HikeSpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshuagodinez/Desktop/HikeSpot/HikeSpot/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "744">
+               </Location>
+               <Location
+                  uuid = "BD562553-AB53-4B1E-BE9A-748DAAC27CD6 - bf2aae0a55eda465"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HikeSpot.SearchViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HikeSpot.SearchViewController&gt;"
+                  moduleName = "HikeSpot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshuagodinez/Desktop/HikeSpot/HikeSpot/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "676">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E2C7B4B-CCB5-4F0C-8AB1-6F027AB0E63D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HikeSpot/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C88C5189-8A78-4C79-80D0-C37D661F3896"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HikeSpot/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "processResponse(withPlacemarks:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78759147-9D15-4986-AFA7-070A3812178E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HikeSpot/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

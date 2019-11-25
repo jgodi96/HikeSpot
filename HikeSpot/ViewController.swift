@@ -8,6 +8,8 @@
 
 import UIKit
 import AVKit
+import CoreLocation
+import MapKit
 
 class ViewController: UIViewController {
     

@@ -15,6 +15,8 @@
 		166503162370C5520085F219 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166503152370C5520085F219 /* Constants.swift */; };
 		166503192370D2050085F219 /* hike.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 166503182370D2050085F219 /* hike.mp4 */; };
 		167181DF238C7FA100F84040 /* cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167181DE238C7FA100F84040 /* cities.swift */; };
+		167181E1238C81CF00F84040 /* hikeExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 167181E0238C81CF00F84040 /* hikeExample.png */; };
+		167181E3238C842600F84040 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167181E2238C842600F84040 /* SearchViewController.swift */; };
 		16C5972C2360278700F3985A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5972B2360278700F3985A /* AppDelegate.swift */; };
 		16C5972E2360278700F3985A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5972D2360278700F3985A /* SceneDelegate.swift */; };
 		16C597302360278700F3985A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5972F2360278700F3985A /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		166503152370C5520085F219 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		166503182370D2050085F219 /* hike.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hike.mp4; sourceTree = "<group>"; };
 		167181DE238C7FA100F84040 /* cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cities.swift; sourceTree = "<group>"; };
+		167181E0238C81CF00F84040 /* hikeExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hikeExample.png; sourceTree = "<group>"; };
+		167181E2238C842600F84040 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		16C597282360278700F3985A /* HikeSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HikeSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C5972B2360278700F3985A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C5972D2360278700F3985A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				16C5972B2360278700F3985A /* AppDelegate.swift */,
-				166503182370D2050085F219 /* hike.mp4 */,
 				16C5972D2360278700F3985A /* SceneDelegate.swift */,
 				16C5972F2360278700F3985A /* ViewController.swift */,
 				1665030A23708DF80085F219 /* HomeViewController.swift */,
@@ -113,6 +116,7 @@
 				16C5973C2360278800F3985A /* Info.plist */,
 				166503132370B7D10085F219 /* GoogleService-Info.plist */,
 				16D9319B238C652900EB4DFA /* DetailViewController.swift */,
+				167181E2238C842600F84040 /* SearchViewController.swift */,
 			);
 			path = HikeSpot;
 			sourceTree = "<group>";
@@ -121,7 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				16D93199238B90B900EB4DFA /* default.png */,
+				167181E0238C81CF00F84040 /* hikeExample.png */,
 				16C597432360285600F3985A /* LoadScreen.png */,
+				166503182370D2050085F219 /* hike.mp4 */,
 			);
 			path = Pictures;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 				16D9319A238B90B900EB4DFA /* default.png in Resources */,
 				16C597382360278800F3985A /* Assets.xcassets in Resources */,
 				166503192370D2050085F219 /* hike.mp4 in Resources */,
+				167181E1238C81CF00F84040 /* hikeExample.png in Resources */,
 				16C597332360278700F3985A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +294,7 @@
 				166503122370AF950085F219 /* Utilities.swift in Sources */,
 				16C5972E2360278700F3985A /* SceneDelegate.swift in Sources */,
 				167181DF238C7FA100F84040 /* cities.swift in Sources */,
+				167181E3238C842600F84040 /* SearchViewController.swift in Sources */,
 				1665030F23708E210085F219 /* RegisterViewController.swift in Sources */,
 				1665030D23708E160085F219 /* LoginViewController.swift in Sources */,
 				1665030B23708DF80085F219 /* HomeViewController.swift in Sources */,

@@ -14,17 +14,11 @@ class cities
     
     init()
     {
-        let c1 = city(name: "Los Angeles", description: "Center of the nation’s film industry", image: "losangeles.png")
-        let c2 = city(name: "New York", description: "Statue of liberty is located here", image: "newyork.png")
-        let c3 = city(name: "Chicago", description: "Is among the largest cities in the U.S", image: "chicago.png")
-        let c4 = city(name: "Pheonix", description: "Capital of the state of Arizona", image: "pheonix.png")
-        let c5 = city(name: "San Diego", description: "On the Pacific coast of California.", image: "sandiego.png")
+        let c1 = city(name: "Hike example 1", description: "Hike Example", image: "hikeExample.png")
+       
         
         cities.append(c1)
-        cities.append(c2)
-        cities.append(c3)
-        cities.append(c4)
-        cities.append(c5)
+        
     }
     func Count() -> Int
     {
