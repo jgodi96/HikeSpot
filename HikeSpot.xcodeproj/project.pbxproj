@@ -21,6 +21,10 @@
 		16C597382360278800F3985A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C597372360278800F3985A /* Assets.xcassets */; };
 		16C5973B2360278800F3985A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C597392360278800F3985A /* LaunchScreen.storyboard */; };
 		16C597442360285600F3985A /* LoadScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 16C597432360285600F3985A /* LoadScreen.png */; };
+		16D9319A238B90B900EB4DFA /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D93199238B90B900EB4DFA /* default.png */; };
+		16D9319C238C652900EB4DFA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D9319B238C652900EB4DFA /* DetailViewController.swift */; };
+		16D931A0238C695100EB4DFA /* cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D9319F238C695100EB4DFA /* cities.swift */; };
+		16D931A2238C695F00EB4DFA /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D931A1238C695F00EB4DFA /* CityTableViewCell.swift */; };
 		621BA4130B6D1EC9F2561918 /* Pods_HikeSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E362339FDA6DCBE313723E62 /* Pods_HikeSpot.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,10 @@
 		16C5973A2360278800F3985A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16C5973C2360278800F3985A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16C597432360285600F3985A /* LoadScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadScreen.png; sourceTree = "<group>"; };
+		16D93199238B90B900EB4DFA /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		16D9319B238C652900EB4DFA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		16D9319F238C695100EB4DFA /* cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cities.swift; sourceTree = "<group>"; };
+		16D931A1238C695F00EB4DFA /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		34647705BB3F9FEF6A628F9C /* Pods-HikeSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HikeSpot.debug.xcconfig"; path = "Target Support Files/Pods-HikeSpot/Pods-HikeSpot.debug.xcconfig"; sourceTree = "<group>"; };
 		E362339FDA6DCBE313723E62 /* Pods_HikeSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HikeSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F425BFAFE64F61CB77271452 /* Pods-HikeSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HikeSpot.release.xcconfig"; path = "Target Support Files/Pods-HikeSpot/Pods-HikeSpot.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,7 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				166503112370AF950085F219 /* Utilities.swift */,
+				16D9319F238C695100EB4DFA /* cities.swift */,
 				166503152370C5520085F219 /* Constants.swift */,
+				16D931A1238C695F00EB4DFA /* CityTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +112,7 @@
 				16C597392360278800F3985A /* LaunchScreen.storyboard */,
 				16C5973C2360278800F3985A /* Info.plist */,
 				166503132370B7D10085F219 /* GoogleService-Info.plist */,
+				16D9319B238C652900EB4DFA /* DetailViewController.swift */,
 			);
 			path = HikeSpot;
 			sourceTree = "<group>";
@@ -109,6 +120,7 @@
 		16C597422360283700F3985A /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				16D93199238B90B900EB4DFA /* default.png */,
 				16C597432360285600F3985A /* LoadScreen.png */,
 			);
 			path = Pictures;
@@ -194,6 +206,7 @@
 				16C5973B2360278800F3985A /* LaunchScreen.storyboard in Resources */,
 				16C597442360285600F3985A /* LoadScreen.png in Resources */,
 				166503142370B7D10085F219 /* GoogleService-Info.plist in Resources */,
+				16D9319A238B90B900EB4DFA /* default.png in Resources */,
 				16C597382360278800F3985A /* Assets.xcassets in Resources */,
 				166503192370D2050085F219 /* hike.mp4 in Resources */,
 				16C597332360278700F3985A /* Main.storyboard in Resources */,
@@ -268,7 +281,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16D9319C238C652900EB4DFA /* DetailViewController.swift in Sources */,
 				16C597302360278700F3985A /* ViewController.swift in Sources */,
+				16D931A0238C695100EB4DFA /* cities.swift in Sources */,
 				16C5972C2360278700F3985A /* AppDelegate.swift in Sources */,
 				166503122370AF950085F219 /* Utilities.swift in Sources */,
 				16C5972E2360278700F3985A /* SceneDelegate.swift in Sources */,
@@ -276,6 +291,7 @@
 				1665030D23708E160085F219 /* LoginViewController.swift in Sources */,
 				1665030B23708DF80085F219 /* HomeViewController.swift in Sources */,
 				166503162370C5520085F219 /* Constants.swift in Sources */,
+				16D931A2238C695F00EB4DFA /* CityTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
