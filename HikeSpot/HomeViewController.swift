@@ -23,6 +23,8 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     //location vars---------------------------------
     var manager:CLLocationManager!
      var city:String?
+    //JSON var-----------------------------------------------
+    @IBOutlet weak var lblTemp: UILabel!
     
     @IBOutlet weak var welcome: UILabel!
     
@@ -36,7 +38,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         picker.delegate = self
 
-        // Firebase user recognition
+        // Firebase user recognition-------------------------------------------------------------------
         let db = Firestore.firestore()
         db.collection("users").whereField("email", isEqualTo: homeEmail).getDocuments { (snapshot,error) in
                           if error != nil{
@@ -55,6 +57,41 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                       }
         Utilities.styleFilledButton(searchHike)
         profilePic.image = UIImage(named: "default.png")
+        
+        
+         // JSON setup-------------------------------------------------------------------
+        
+        let urlAsString = "https://api.darksky.net/forecast/0dbafcef3ad929d4ce3eb0fc39ab19e4/34.0489,-111.0937"
+                      
+        guard let url = URL(string: urlAsString) else {return}
+        
+        URLSession.shared.dataTask(with: url){ (data,response,err) in
+            
+            guard let data = data else {return}
+           // let dataAsString = String(data: data,encoding: .utf8)
+           // print (dataAsString)
+            do{
+                let JsonResult = try JSONDecoder().decode(Welcome.self, from: data) as? NSDictionary
+                let jsonObjects = JsonResult as? [String:Any]
+                let arr = jsonObjects!["Daily"] as? NSArray
+                let thisArea = arr![0] as? [ String : Any ]
+                let temp = thisArea!["temperatureMax"]
+               
+                print(temp)
+
+                
+            }catch let jsonErr {
+                print("Error serializing",jsonErr)
+            }
+        
+                
+            
+            
+        }.resume()
+                      
+                      
+        
+        
       
    
    
@@ -276,6 +313,78 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
         }
+    //JSON-------------------------------------------------------------------------------------------------
+    
+    // MARK: - Welcome
+    struct Welcome: Decodable {
+        let latitude, longitude: Double
+        let timezone: String
+        let hourly: Hourly
+        let daily: Daily
+        let offset: Int
+    }
+
+    // MARK: - Daily
+    struct Daily: Decodable {
+        let data: [DailyDatum]
+    }
+
+    // MARK: - DailyDatum
+    struct DailyDatum: Decodable {
+        let time: Int
+        let summary, icon: String
+        let sunriseTime, sunsetTime: Int
+        let moonPhase, precipIntensity, precipIntensityMax: Double
+        let precipIntensityMaxTime, precipProbability: Int
+        let precipType: String
+        let precipAccumulation, temperatureHigh: Double
+        let temperatureHighTime: Int
+        let temperatureLow: Double
+        let temperatureLowTime: Int
+        let apparentTemperatureHigh: Double
+        let apparentTemperatureHighTime: Int
+        let apparentTemperatureLow: Double
+        let apparentTemperatureLowTime: Int
+        let dewPoint, humidity, pressure, windSpeed: Double
+        let windGust: Double
+        let windGustTime, windBearing: Int
+        let cloudCover: Double
+        let uvIndex, uvIndexTime: Int
+        let visibility, temperatureMin: Double
+        let temperatureMinTime: Int
+        let temperatureMax: Double
+        let temperatureMaxTime: Int
+        let apparentTemperatureMin: Double
+        let apparentTemperatureMinTime: Int
+        let apparentTemperatureMax: Double
+        let apparentTemperatureMaxTime: Int
+    }
+
+    // MARK: - Hourly
+    struct Hourly: Decodable {
+        let summary, icon: String
+        let data: [HourlyDatum]
+    }
+
+    // MARK: - HourlyDatum
+    struct HourlyDatum: Decodable {
+        let time: Int
+        let summary, icon: String
+        let precipIntensity: Double
+        let precipProbability: Int
+        let temperature, apparentTemperature, dewPoint, humidity: Double
+        let pressure, windSpeed: Double
+        let windBearing: Int
+        let cloudCover: Double
+        let uvIndex: Int
+        let visibility: Double
+        let windGust: Double?
+        let precipType: String?
+        let precipAccumulation: Double?
+    }
+
+    
+    
 
     }
 

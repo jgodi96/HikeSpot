@@ -36,40 +36,7 @@ class SearchViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             manager.desiredAccuracy = kCLLocationAccuracyBest
             manager.requestWhenInUseAuthorization()
             manager.startUpdatingLocation()
-            
-            let request = MKLocalSearch.Request()
-                     request.naturalLanguageQuery = "hike"
-                     request.region = map.region
-                     let search = MKLocalSearch(request: request)
-                     
-                     search.start { response, _ in
-                         guard let response = response else {
-                             return
-                         }
-                         print( response.mapItems )
-                         var matchingItems:[MKMapItem] = []
-                         matchingItems = response.mapItems
-                         for i in 1...matchingItems.count - 1
-                         {
-                                 let place = matchingItems[i].placemark
-                            // print(place.location?.coordinate.latitude as Any)
-                           //  print(place.location?.coordinate.longitude as Any)
-                           //  print(place.name as Any)
-                             let coordinates = CLLocationCoordinate2D( latitude: CLLocationDegrees((place.location?.coordinate.latitude)!), longitude: CLLocationDegrees((place.location?.coordinate.longitude)!))
-                                        // add an annotation
-                                               let annotation = MKPointAnnotation()
-                                               annotation.coordinate = coordinates
-                             annotation.title = place.name
-                                              // annotation.subtitle = state!
-                                               
-                                               self.map.addAnnotation(annotation)
-                             
-                         }
-                        
-                         
-                        
-                     }
-                     
+        
                        
     
             
@@ -110,6 +77,40 @@ class SearchViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                                          }
                                  })
                       map.mapType = MKMapType.standard
+            
+                    let request = MKLocalSearch.Request()
+                             request.naturalLanguageQuery = "hike"
+                             request.region = map.region
+                             let search = MKLocalSearch(request: request)
+                             
+                             search.start { response, _ in
+                                 guard let response = response else {
+                                     return
+                                 }
+                                 print( response.mapItems )
+                                 var matchingItems:[MKMapItem] = []
+                                 matchingItems = response.mapItems
+                                 for i in 1...matchingItems.count - 1
+                                 {
+                                         let place = matchingItems[i].placemark
+                                    // print(place.location?.coordinate.latitude as Any)
+                                   //  print(place.location?.coordinate.longitude as Any)
+                                   //  print(place.name as Any)
+                                     let coordinates = CLLocationCoordinate2D( latitude: CLLocationDegrees((place.location?.coordinate.latitude)!), longitude: CLLocationDegrees((place.location?.coordinate.longitude)!))
+                                                // add an annotation
+                                                       let annotation = MKPointAnnotation()
+                                                       annotation.coordinate = coordinates
+                                     annotation.title = place.name
+                                                      // annotation.subtitle = state!
+                                                       
+                                                       self.map.addAnnotation(annotation)
+                                     
+                                 }
+                                
+                                 
+                                
+                             }
+                             
             
         }
         //location ------------------------------------------------------------------------------------------------------------
