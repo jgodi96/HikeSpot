@@ -31,7 +31,7 @@ class cities
         cities.remove(at: item)
     }
     func addCity(cname:String, des:String, image:String) -> city{
-        let c = city(name: cname, description:"ASU is located in tempe", image:"tempe.png" )
+        let c = city(name: cname, description: des , image: image )
         cities.append(c)
         return c
     }

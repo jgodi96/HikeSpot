@@ -207,21 +207,26 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
       @IBAction func refreash(_ sender: AnyObject) {
            
              
-             let alert = UIAlertController(title: "Add Tempe", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Add a Hike", message: nil, preferredStyle: .alert)
              alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
              
              alert.addTextField(configurationHandler: { textField in
-                 textField.placeholder = "Enter Tempe Here"
+                 textField.placeholder = "Enter Hike Here"
              })
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Enter Description Here"
+        })
+        
              
              alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                  
                  // Do this first, then use method 1 or method 2
+                let cdes = alert.textFields![1].text!
                  if let name = alert.textFields?.first?.text {
                      print("city name: \(name)")
             
                      
-                  self.cityList.addCity(cname: name, des: "ASU is located in Tempe", image: "tempe.png")
+                  self.cityList.addCity(cname: name, des: cdes, image: "hikeExample.png")
                    
                     
                   let indexPath = IndexPath (row: self.cityList.Count() - 1, section: 0)
@@ -234,6 +239,9 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
              }))
              
              self.present(alert, animated: true)
+        //print(myCityList.cities[0].cityName)
+               
+                   
              
              
              
