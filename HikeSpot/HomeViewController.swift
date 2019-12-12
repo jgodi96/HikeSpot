@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                manager.desiredAccuracy = kCLLocationAccuracyBest
                manager.requestWhenInUseAuthorization()
                manager.startUpdatingLocation()
+       
         
         picker.delegate = self
 
